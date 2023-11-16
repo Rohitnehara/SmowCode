@@ -68,7 +68,7 @@ const addNote = async (req, res) => {
 
 const getNotes = async (req, res) => {
     try {
-        const userId = req.user.userId; 
+        const userId = req.user.userId;
         const result = await db.query('SELECT * FROM notes WHERE user_id = $1', [userId]);
         const notes = result.rows;
 
